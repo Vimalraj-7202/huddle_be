@@ -1,0 +1,15 @@
+pipeline
+ {
+    agent any
+    stages {
+        stage('Git CHeckout') {
+            step {
+                git branch:'dev'
+                url:'https://github.com/Vimalraj-7202/huddle_be.git'
+            }
+        }
+        stage('Install Dependencies') {
+            sh 'npm install'
+        }
+    }
+}
